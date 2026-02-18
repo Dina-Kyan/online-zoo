@@ -1,0 +1,18 @@
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --navy: #20113D;
+    --orange: #F58021;
+    --turquoise: #00A092;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+  }
