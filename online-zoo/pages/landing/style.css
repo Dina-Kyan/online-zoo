@@ -4,7 +4,10 @@
     --black: #000;
     --navy: #20113D;
     --orange: #F58021;
+    --oragee-hover: #D26004;
     --turquoise: #00A092;
+    --turquoise-hover: #05786E;
+    --turquoise-light: #80CFC8;
 }
 
 * {
