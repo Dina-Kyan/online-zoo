@@ -1,0 +1,99 @@
+
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --navy: #20113D;
+    --orange: #F58021;
+    --orange-hover: #D26004;
+    --turquoise: #00A092;
+    --turquoise-hover: #05786E;
+    --turquoise-light: #80CFC8;
+}
+
+.map {
+    padding: 42px 260px 150px 260px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.map-container{
+    width: 100%;
+    /* max-width: 1406px; */
+}
+
+.map-svg {
+    width: 100%;
+    /* max-width: 1406px; */
+    height: auto;
+}
+
+.map img{
+    width: 100%;
+}
+
+.group:hover .tag{
+    fill: var(--white);
+    cursor: pointer;
+}
+
+.group:hover .icon {
+    cursor: pointer;
+}
+
+.group:hover .border {
+    stroke: var(--white);
+}
+
+.border {
+    stroke: none;
+}
+
+.map h2 {
+    font-size: 54px;
+    color: var(--navy);
+    font-weight: 600;
+    width: 600px;
+    text-align: center;
+    padding-bottom: 68px;
+}
+
+@media (max-width: 1200px) {
+    .map {
+        padding: 30px 0 100px 0;
+    }
+
+    .map h2 {
+        padding-bottom: 30px;
+    }
+}
+
+@media (max-width: 640px) {
+    .map {
+        padding: 30px 0 100px 0;
+    }
+
+    .map h2 {
+        padding-bottom: 50px;
+        font-weight: 500;
+        width: 100%;
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 320px) {
+    .map {
+        padding: 20px 0 50px 0;
+    }
+
+    .map h2 {
+        padding-bottom: 30px;
+        font-size: 42px;
+        text-transform: lowercase;
+        font-size: 26px;
+        line-height: 1.3;
+    }
+}
+
