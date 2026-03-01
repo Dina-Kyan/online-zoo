@@ -63,6 +63,11 @@ img {
     font-weight: 600;
 }
 
+.orange-btn:hover {
+    background: var(--orange-hover); 
+    cursor: pointer;
+}
+
 .orange-btn .arrow {
     fill: var(--white);
 }
@@ -90,6 +95,18 @@ img {
     justify-content: center;
 }
 
+.alt-btn:hover .arrow-container {
+    background: var(--orange-hover);
+}
+
+.alt-btn .arrow-container:hover {
+    background: var(--orange-hover);
+}
+
+.alt-btn:hover .arrow-container .arrow{
+    fill: var(--white);
+}
+
 .alt-btn .arrow-container .arrow{
     fill: var(--white);
 }
@@ -101,12 +118,26 @@ img {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    height: 45px;
     font-weight: 600;
 }
 
 .card-btn .arrow {
     fill: var(--orange);
 }
+
+.card-btn:hover {
+    background: var(--orange);
+    color: var(--white);
+    padding: 10px 40px;
+    border-radius: 5px;
+}
+
+.card-btn:hover .arrow {
+    fill: white;
+}
+
+
 
 .reg-btn {
     color: var(--navy);
@@ -122,6 +153,18 @@ img {
     font-size: 18px;
 }
 
+.reg-btn:hover { 
+    background: var(--navy);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.reg-btn:hover .arrow {
+    fill: var(--white);
+    cursor: pointer;
+}
+
+
 .reg-btn .arrow {
     fill: var(--navy);
 }
@@ -132,6 +175,15 @@ img {
     background: none;
     border-radius: 5px;
     border: 1px solid var(--navy);
+}
+
+.carousel-btn:hover {
+    background: var(--navy);
+    cursor: pointer;
+}
+
+.carousel-btn:hover .arrow {
+    fill: var(--white);
 }
 
 .carousel-btn .arrow{
@@ -276,6 +328,15 @@ img {
     gap: 10px;
     overflow-x: auto;
     padding-left: 10px;
+}
+
+.pets .carousel .cards {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.pets .carousel .cards::-webkit-scrollbar {
+    display: none;
 }
 
 .pets .carousel .cards .card {
@@ -448,7 +509,13 @@ img {
     display: flex;
     width: 100%;
     gap: 10px;
-    overflow-x: clip;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.feedback .feedback-content .carousel .cards::-webkit-scrollbar {
+    display: none;
 }
 
 .feedback .feedback-content .carousel .cards .card {
@@ -518,6 +585,11 @@ img {
     align-self: center;
 }
 
+.feedback .reg-btn:hover {
+    border: none;
+    background: var(--turquoise);
+}
+
 .feedback .reg-btn .arrow {
     fill: var(--white);
 }
@@ -554,6 +626,12 @@ img {
     gap: 10px;
     padding: 0 10px;
     overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.care .cards {
+    display: none;
 }
 
 .care .cards .card {
@@ -801,7 +879,6 @@ img {
     
     .feedback .feedback-content .carousel .cards {
         gap: 20px;
-        overflow-x: auto;
         padding-left: 20px;
         padding-right: 20px;
         padding-bottom: 50px;
@@ -994,7 +1071,6 @@ img {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
-        overflow-x: clip;
         padding-left: 40px;
     }
 
@@ -1087,7 +1163,7 @@ img {
     .feedback .feedback-content .carousel .cards {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        overflow-x: clip;
+        overflow-x: hidden;
         gap: 30px;
         padding-left: 140px;
     }
@@ -1118,8 +1194,13 @@ img {
         border: 1px solid var(--white);
     }
 
+    .feedback .feedback-content .carousel .carousel-btn:hover {
+        background-color: var(--white);
+        cursor: pointer;
+    }
+
     .feedback .feedback-content .carousel .carousel-btn .arrow {
-        fill: var(--white);
+        fill: var(--navy);
     }
 
     /* care  */
@@ -1356,7 +1437,6 @@ img {
 
     .feedback .wrapper {
         padding: 100px 0 150px 260px;
-        overflow-x: hidden;
     }
 
     .feedback .feedback-content {
@@ -1366,7 +1446,6 @@ img {
     }
 
     .feedback .feedback-content .carousel .cards{
-        overflow-x: hidden;
         padding: 0;
     }
 

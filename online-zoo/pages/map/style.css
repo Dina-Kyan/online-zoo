@@ -30,10 +30,6 @@
     height: auto;
 }
 
-.map img{
-    width: 100%;
-}
-
 .group:hover .tag{
     fill: var(--white);
     cursor: pointer;

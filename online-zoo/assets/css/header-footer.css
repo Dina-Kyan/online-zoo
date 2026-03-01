@@ -29,6 +29,24 @@ a {
     color: var(--white);
 }
 
+.reg-btn {
+    color: var(--navy);
+    text-transform: uppercase;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid var(--navy);
+    gap: 10px;
+    font-weight: 600;
+    background: none;
+    font-size: 18px;
+}
+
+.reg-btn .arrow {
+    fill: var(--navy);
+}
+
 footer .divider {
     width: 100%;
     height: 1px;
@@ -91,6 +109,16 @@ header .wrapper {
     line-height: 1.5;
     text-transform: uppercase;
 } 
+
+.header-right .nav a:hover {
+    color: var(--turquoise);
+    cursor: pointer;
+}
+
+.header-right .nav a.selected{
+    color: var(--turquoise);
+    cursor: default;
+}
 
 .nav.active {
     transform: translateX(0);  
@@ -179,6 +207,11 @@ footer nav ul {
     font-weight: 600;
 }
 
+footer nav ul li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 footer .footer-down {
     display: flex;
     flex-direction: column-reverse;
@@ -202,6 +235,10 @@ footer .socials {
     padding: 0 50px;
 }
 
+footer .socials a {
+    cursor: pointer;
+}
+
 footer .reg-btn {
     border-color: var(--white);
     color: var(--white);
@@ -209,6 +246,11 @@ footer .reg-btn {
     width: 298px;
     height: 45px;
     line-height: 1.5;
+}
+
+footer .reg-btn:hover {
+    border: none;
+    background: var(--turquoise);
 }
 
 footer .reg-btn .arrow{
