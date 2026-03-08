@@ -311,11 +311,31 @@ footer .reg-btn .arrow{
 
     .header-right {
         display: flex;
-        gap: 80px;
+        gap: 70px;
+    }
+
+    .header-right .user {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .header-right .user .user-icon {
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+    }
+
+    .header-right .user .user-icon:hover {
+        border: 3px solid var(--black);
+        border-radius: 50%;
     }
 
     .header-right .header-socials {
         display: flex;
+        align-items: center;
+        justify-content: center;
         gap: 30px;
     }
 
