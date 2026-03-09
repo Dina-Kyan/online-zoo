@@ -318,6 +318,7 @@ footer .reg-btn .arrow{
         display: flex;
         align-items: center;
         justify-content: center;
+        /* position: relative; */
         gap: 20px;
     }
 
@@ -330,6 +331,25 @@ footer .reg-btn .arrow{
     .header-right .user .user-icon:hover {
         border: 3px solid var(--black);
         border-radius: 50%;
+    }
+
+    .header-right .user .user-popup {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 5px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        height: 400px;
+        text-transform: uppercase;
+        background: var(--white);
+        display: none;
+        z-index: 100;
     }
 
     .header-right .header-socials {

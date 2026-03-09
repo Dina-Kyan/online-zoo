@@ -52,6 +52,7 @@ img {
 .orange-btn {
     background: var(--orange);
     text-transform: uppercase;
+    border: none;
     display: inline-flex;
     align-items: center;
     justify-content: center;

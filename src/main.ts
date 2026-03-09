@@ -3,6 +3,7 @@ import { getPets } from "./api/api.js";
 import { getFeedback } from "./api/api.js";
 import { Feedback } from "./types/feedback.js";
 import {Pet} from "./types/pet"
+import './userMenu.js';
 
 async function loadPets() {
   const container = document.getElementById("pets") as HTMLElement;
