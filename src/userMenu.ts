@@ -47,11 +47,11 @@ function renderUserMenu() {
     const signInBtn = document.createElement("button");
     signInBtn.textContent = "Sign In";
     signInBtn.classList.add("orange-btn");
-    signInBtn.addEventListener("click", () => location.href = "/pages/signin.html");
+    signInBtn.addEventListener("click", () => location.href = "../log-in/signin.html");
     
     const registerBtn = document.createElement("button");
     registerBtn.textContent = "Registration";
-    registerBtn.addEventListener("click", () => location.href = "/pages/registration.html");
+    registerBtn.addEventListener("click", () => location.href = "../registration/registration.html");
     registerBtn.classList.add("orange-btn");
 
     userPopup.appendChild(signInBtn);
