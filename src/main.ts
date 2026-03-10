@@ -7,6 +7,7 @@ import './userMenu.js';
 
 async function loadPets() {
   const container = document.getElementById("pets") as HTMLElement;
+  if(!container) return;
   container.innerHTML = `<div class="loading"></div>`;
 
   try {
@@ -72,6 +73,8 @@ function swapPets(direction: "next" | "prev", container: HTMLElement, pets: Pet[
 
 async function loadFeedback() {
   const container = document.getElementById("feedback-list") as HTMLElement;
+  if (!container) return;
+  
   container.innerHTML = `<div class="loading"></div>`;
 
   try {
