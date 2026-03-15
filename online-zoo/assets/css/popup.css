@@ -1,0 +1,406 @@
+
+
+.donation-popup {
+    position: fixed;
+    background: var(--white);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    max-height: 90vh;
+    overflow-y: auto;
+    z-index: 200;
+}
+
+.donation-popup .popup-header {
+    background: var(--orange);
+    width: 100%;
+    color: var(--white);
+    font-size: 26px;
+    font-weight: 500;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.donation-popup h3 {
+    font-family: 600;
+    text-align: center;
+    border-bottom: 1px solid #A4A8AE;
+    padding-top: 20px;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.donation-popup p {
+    line-height: 1.5;
+    padding: 0 30px 10px 30px;
+    text-align: center;
+}
+
+.donation-popup p span {
+    color: var(--turquoise);
+}
+
+.donation-popup .donation-btn {
+    background: var(--turquoise);
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--white);
+    border-radius: 5px;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.donation-popup .donation-btn .arrow {
+    fill: var(--white);
+}
+
+.donation-popup .amount {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 10px 20px 10px;
+}
+
+.donation-popup .amount .donation-btn {
+    width: 130px;
+    height: 50px;
+    background: rgba(0, 160, 146, 0.5);
+}
+
+.other-amount {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 10px 20px 10px;
+}
+
+.donation-popup .other-amount .donation-btn, input {
+    width: 130px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.donation-popup .special-pet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 30px;
+}
+
+.donation-popup .special-pet .donation-btn{
+    width: 210px;
+    height: 50px;
+    background: rgba(0, 160, 146, 0.5);
+}
+
+.donation-popup .special-pet select {
+    width: 280px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.donation-popup .monthly-donate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding-bottom: 70px;
+}
+
+.donation-popup .monthly-donate label {
+    line-height: 1.3;
+    font-size: 16px;
+}
+
+.donation-popup .monthly-donate input {
+    width: 30px;
+    height: 30px;
+}
+
+.donation-popup .next {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+.donation-popup .next .donation-btn {
+    width: 174px;
+    height: 50px;
+}
+
+.donation-popup .next .dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.donation-popup .next .dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid var(--turquoise);
+    transition: 0.3s;
+}
+
+.donation-popup .next .dots .dot.active {
+    background: var(--turquoise);
+}
+
+.donation-popup .donatior-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.donation-popup .donatior-info p {
+    align-self: flex-start;
+    padding: 0 10px 5px 10px;
+}
+
+.donation-popup .donatior-info p:nth-child(3) {
+    padding: 30px 10px 5px 10px;
+}
+
+.donation-popup .donatior-info input{
+    width: 280px;
+    height: 50px;
+}
+
+.donation-popup .billing-information > p {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+    padding: 10px 10px 50px 10px;
+    width: 100%;
+}
+
+.back-btn {
+    color: var(--turquoise);
+    text-decoration: underline;
+    line-height: 1.5;
+    font-weight: 600;
+    border: none;
+    font-size: 18px;
+}
+
+@media (min-width: 640px) {
+    .donation-popup {
+        width: 600px;
+    }
+
+    .donation-popup h3 {
+        text-align: left;
+        padding: 50px 75px 10px 75px;
+        margin-bottom: 40px;
+        font-size: 18px;
+    }
+
+    .donation-popup p {
+        line-height: 1.5;
+        padding: 0 75px 20px 75px;
+        text-align: left;
+    }
+
+    .donation-popup .amount {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 40px;
+        column-gap: 20px;
+        padding: 0 75px 40px 75px;
+    }
+    
+    .donation-popup .amount .donation-btn {
+        width: 135px;
+        height: 65px;
+    }
+
+    .other-amount {
+        padding: 0 75px 50px 75px;
+    }
+    
+    .donation-popup .other-amount .donation-btn, input {
+        width: 212px;
+        height: 65px;
+    }
+
+    .donation-popup .special-pet {
+        align-items: flex-start;
+        padding: 0 75px 40px 75px;
+        gap: 20px;
+    }
+    
+    .donation-popup .special-pet .donation-btn{
+        width: 211px;
+        height: 65px;
+        background: rgba(0, 160, 146, 0.5);
+    }
+    
+    .donation-popup .special-pet select {
+        width: 445px;
+        height: 65px;
+    }
+
+    .donation-popup .monthly-donate {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 20px;
+        padding: 0 75px 50px 75px;
+    }
+    
+    .donation-popup .monthly-donate label {
+        order: 2;
+    }
+    
+    .donation-popup .monthly-donate input {
+        width: 30px;
+        height: 30px;
+        order: 1;
+    }
+
+    .donation-popup .next {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        padding: 0 75px 40px 75px;
+    }
+    
+    .donation-popup .next .donation-btn {
+        width: 210px;
+        height: 74px;
+        order: 2;
+    }
+
+    .donation-popup .donatior-info p {
+        align-self: flex-start;
+        padding: 0 77px 10px 77px;
+    }
+    
+    .donation-popup .donatior-info p:nth-child(3) {
+        padding: 40px 77px 10px 77px;
+    }
+    
+    .donation-popup .donatior-info input{
+        width: 445px;
+        height: 60px;
+    }
+
+    .donation-popup .billing-information > p {
+        font-size: 18px;
+        padding: 20px 77px 50px 77px;
+        width: 100%;
+    }
+
+    .donation-popup .billing-information .next .donation-btn {
+        width: 210px;
+        height: 74px;
+        order: 3;
+    }
+
+    .donation-popup .back-btn {
+        order: 2;
+    }
+}
+
+@media (min-width: 1200px) {
+    .donation-popup {
+        width: 920px;
+    }
+
+    .donation-popup h3 {
+        text-align: left;
+        padding: 50px 120px 10px 120px;
+        line-height: 1.5;
+    }
+
+    .donation-popup p {
+        padding: 0 120px 10px 120px;
+    }
+
+    .donation-popup .amount {
+        grid-template-columns: repeat(6, 1fr);
+        padding: 0 120px 40px 120px;
+    }
+    
+    .donation-popup .amount .donation-btn {
+        width: 80px;
+    }
+
+    .other-amount {
+        display: flex;
+        gap: 34px;
+        padding: 0 120px 40px 120px;
+    }
+    
+    .donation-popup .other-amount .donation-btn, input {
+        width: 200px;
+        height: 65px;
+    }
+
+    .donation-popup .special-pet {
+        flex-direction: row;
+        padding: 0 120px 40px 120px;
+        gap: 34px;
+    }
+    
+    .donation-popup .special-pet .donation-btn{
+        width: 200px;
+    }
+    
+    .donation-popup .special-pet select {
+        width: 440px;
+        height: 65px;
+    }
+
+    .donation-popup .monthly-donate {
+        padding: 0 125px 50px 125px;
+    }
+
+    .donation-popup .next {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+        gap: 325px;
+        padding: 0 125px 50px 125px;
+    }
+
+    .donation-popup .donatior-info p {
+        align-self: flex-start;
+        padding: 0 120px 10px 120px;
+    }
+    
+    .donation-popup .donatior-info p:nth-child(3) {
+        padding: 50px 120px 10px 120px;
+    }
+    
+    .donation-popup .donatior-info input{
+        width: 680px;
+    }
+
+    .donation-popup .billing-information > p {
+        font-size: 18px;
+        padding: 10px 120px 50px 120px;
+    }
+
+    .donation-popup .billing-information .next {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+        gap: 140px;
+        padding: 0 125px 50px 125px;
+    }
+}
