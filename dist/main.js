@@ -1,0 +1,139 @@
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+import { getPets } from "./api/api.js";
+import { getFeedback } from "./api/api.js";
+import './userMenu.js';
+function loadPets() {
+    return __awaiter(this, void 0, void 0, function* () {
+        var _a, _b;
+        const container = document.getElementById("pets");
+        if (!container)
+            return;
+        container.innerHTML = `<div class="loading"></div>`;
+        try {
+            const pets = yield getPets();
+            container.innerHTML = "";
+            renderPets(container, pets);
+            (_a = document.getElementById("pets-right")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => swapPets("next", container, pets));
+            (_b = document.getElementById("pets-left")) === null || _b === void 0 ? void 0 : _b.addEventListener("click", () => swapPets("prev", container, pets));
+            let startX = 0;
+            container === null || container === void 0 ? void 0 : container.addEventListener("touchstart", (e) => {
+                startX = e.touches[0].clientX;
+            });
+            container === null || container === void 0 ? void 0 : container.addEventListener("touchend", (e) => {
+                const endX = e.changedTouches[0].clientX;
+                const diff = endX - startX;
+                if (diff > 50)
+                    swapPets("prev", container, pets);
+                if (diff < -50)
+                    swapPets("next", container, pets);
+            });
+        }
+        catch (error) {
+            console.log(error);
+            container.textContent =
+                "Something went wrong. Please, refresh the page";
+        }
+    });
+}
+function renderPets(container, pets) {
+    container.innerHTML = "";
+    pets.slice(0, 8).forEach((pet) => {
+        const card = document.createElement("li");
+        card.className = "card";
+        card.innerHTML = `
+        <a href="../zoos-pages/${pet.name}.html">
+            <img src="online-zoo/assets/card-img/card-${pet.id}.jpg" alt="${pet.commonName}">
+            <span class="name">${pet.name}</span>
+            <h3>${pet.commonName}</h3>
+            <p>${pet.description}</p>
+            <a class="btn card-btn" href="#">
+                view live cam
+                <svg class="arrow" width="25" height="22" viewBox="0 0 25 22" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2098 0.119971C13.0277 0.199174 12.8622 0.315255 12.7229 0.461565C12.5833 0.607505 12.4725 0.780876 12.397 0.971748C12.3214 1.16262 12.2825 1.36724 12.2825 1.57389C12.2825 1.78055 12.3214 1.98517 12.397 2.17604C12.4725 2.36691 12.5833 2.54028 12.7229 2.68622L18.7506 9H1.6C1.17565 9 0.768688 9.21071 0.468629 9.58579C0.168571 9.96086 0 10.4696 0 11C0 11.5304 0.168571 12.0391 0.468629 12.4142C0.768688 12.7893 1.17565 13 1.6 13H18.7514L12.7229 19.3146C12.4414 19.6096 12.2833 20.0097 12.2833 20.4269C12.2833 20.8441 12.4414 21.2443 12.7229 21.5393C13.0045 21.8343 13.3863 22 13.7845 22C14.1826 22 14.5645 21.8343 14.846 21.5393L23.842 12.1127C23.9816 11.9668 24.0924 11.7934 24.168 11.6026C24.2436 11.4117 24.2825 11.2071 24.2825 11.0004C24.2825 10.7938 24.2436 10.5891 24.168 10.3983C24.0924 10.2074 23.9816 10.034 23.842 9.88808L14.846 0.461565C14.7067 0.315255 14.5413 0.199174 14.3591 0.119971C14.177 0.0407677 13.9817 0 13.7845 0C13.5873 0 13.392 0.0407677 13.2098 0.119971Z" />
+                </svg>
+            </a>
+        </a>
+       `;
+        container.appendChild(card);
+    });
+}
+function swapPets(direction, container, pets) {
+    if (direction === "next") {
+        pets.push(pets.shift());
+    }
+    else {
+        pets.unshift(pets.pop());
+    }
+    renderPets(container, pets);
+}
+function loadFeedback() {
+    return __awaiter(this, void 0, void 0, function* () {
+        var _a, _b;
+        const container = document.getElementById("feedback-list");
+        if (!container)
+            return;
+        container.innerHTML = `<div class="loading"></div>`;
+        try {
+            const feedbacks = yield getFeedback();
+            container.innerHTML = "";
+            renderFeedbacks(container, feedbacks);
+            (_a = document.getElementById("right-feedback")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => swapFeedback("next", container, feedbacks));
+            (_b = document.getElementById("left-feedback")) === null || _b === void 0 ? void 0 : _b.addEventListener("click", () => swapFeedback("prev", container, feedbacks));
+            let startX = 0;
+            container === null || container === void 0 ? void 0 : container.addEventListener("touchstart", (e) => {
+                startX = e.touches[0].clientX;
+            });
+            container === null || container === void 0 ? void 0 : container.addEventListener("touchend", (e) => {
+                const endX = e.changedTouches[0].clientX;
+                const diff = endX - startX;
+                if (diff > 50)
+                    swapFeedback("prev", container, feedbacks);
+                if (diff < -50)
+                    swapFeedback("next", container, feedbacks);
+            });
+        }
+        catch (error) {
+            container.textContent =
+                "Something went wrong. Please, refresh the page";
+        }
+    });
+}
+function renderFeedbacks(container, feedbacks) {
+    container.innerHTML = "";
+    feedbacks.slice(0, 4).forEach((feedback) => {
+        const li = document.createElement("li");
+        li.className = "card";
+        li.innerHTML = `
+    <span class="quotes">
+        <svg width="59" height="45" viewBox="0 0 59 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.2798 19.56C22.5198 20.6 24.2398 22.16 25.4398 24.24C26.7198 26.24 27.3598 28.6 27.3598 31.32C27.3598 35.32 26.0798 38.56 23.5198 41.04C20.9598 43.52 17.6798 44.76 13.6798 44.76C9.67977 44.76 6.39977 43.52 3.83977 41.04C1.27977 38.56 -0.000234291 35.32 -0.000234291 31.32C-0.000234291 29.48 0.239766 27.64 0.719766 25.8C1.19977 23.96 2.27977 21.24 3.95977 17.64L11.6398 -2.71797e-05H25.9198L20.2798 19.56Z" fill="#00A092"/>
+      </svg>
+    </span>
+
+    <h3>${feedback.city},${feedback.month} ${feedback.year}</h3>
+    <p>${feedback.text}</p>
+    <span class="name">${feedback.name}</span>
+    `;
+        container.appendChild(li);
+    });
+}
+function swapFeedback(direction, container, feedbacks) {
+    if (direction === "next") {
+        feedbacks.push(feedbacks.shift());
+    }
+    else {
+        feedbacks.unshift(feedbacks.pop());
+    }
+    renderFeedbacks(container, feedbacks);
+}
+loadFeedback();
+loadPets();
+//# sourceMappingURL=main.js.map
