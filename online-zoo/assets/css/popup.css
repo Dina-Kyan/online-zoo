@@ -10,6 +10,7 @@
     max-height: 90vh;
     overflow-y: auto;
     z-index: 200;
+    display: none;
 }
 
 .donation-popup .popup-header {
