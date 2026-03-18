@@ -46,7 +46,7 @@ function renderPets (container: HTMLElement, pets: Pet[]) {
       card.className = "card";
       card.innerHTML = `
         <a href="../zoos-pages/${pet.name}.html">
-            <img src="../../assets/card-img/card-${pet.id}.jpg" alt="${pet.commonName}">
+            <img src="online-zoo/assets/card-img/card-${pet.id}.jpg" alt="${pet.commonName}">
             <span class="name">${pet.name}</span>
             <h3>${pet.commonName}</h3>
             <p>${pet.description}</p>
